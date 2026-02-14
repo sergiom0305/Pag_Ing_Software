@@ -86,3 +86,40 @@ h1 {
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
+.contenedor-semanas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-semana {
+    background-color: white;
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-semana:hover {
+    transform: translateY(-5px);
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2c3e50; /* usa tu color principal */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #1a252f;
+}
