@@ -1,181 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Repositorio de Documentos</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Repositorio de Documentos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    padding: 30px;
+}
+
+.header h1 { margin: 0; }
+.header p { color: #94a3b8; }
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+    background: #1e293b;
+    color: white;
+}
+
+.info {
+    margin-bottom: 15px;
+    color: #94a3b8;
+}
+
+.documents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 18px;
+    border-radius: 18px;
+    transition: 0.25s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #3b82f6;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.icon { font-size: 24px; }
+
+h3 {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #3b82f6;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.btn:hover { background: #2563eb; }
+</style>
 </head>
+
 <body>
 
+<div class="header">
+    <h1>📂 Repositorio de Documentos</h1>
+    <p>Semana 1 - Ciclo 2</p>
+</div>
+
 <div class="container">
-    <h1>Repositorio de Documentos</h1>
-    <p class="subtitle">DOCUMENTACIÓN SEMANA 1</p>
 
-    <div class="documents">
+<div class="controls">
+    <input type="text" id="search" placeholder="🔍 Buscar documento...">
+    <select id="filter">
+        <option value="all">Todos</option>
+        <option value="bitacora">Bitácoras</option>
+        <option value="acta">Actas</option>
+        <option value="plan">Planes</option>
+        <option value="revision">Revisiones</option>
+        <option value="otros">Otros</option>
+    </select>
+</div>
 
-        <!-- BITÁCORAS -->
-        <div class="card">
-            <h2>Bitácora - Camilo</h2>
-            <a href="docs/sem1/BitacoraTiempoCamilo.pdf" download class="btn">Descargar</a>
-        </div>
+<div class="info">
+    Total visibles: <span id="count"></span>
+</div>
 
-        <div class="card">
-            <h2>Bitácora - Cobos</h2>
-            <a href="docs/sem1/BitacoraTiempo cobos.pdf" download class="btn">Descargar</a>
-        </div>
+<div class="documents" id="docs">
 
-        <div class="card">
-            <h2>Bitácora - Carolina</h2>
-            <a href="docs/sem1/BitacoraTiempo Carolina 9.pdf" download class="btn">Descargar</a>
-        </div>
+<!-- BITÁCORAS -->
+<div class="card" data-type="bitacora"><div class="badge">Bitácora</div><div class="icon">📘</div><h3>Bitácora Camilo</h3><a href="docs/sem1/BitacoraTiempoCamilo.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="bitacora"><div class="badge">Bitácora</div><div class="icon">📘</div><h3>Bitácora Cobos</h3><a href="docs/sem1/BitacoraTiempo cobos.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="bitacora"><div class="badge">Bitácora</div><div class="icon">📘</div><h3>Bitácora Carolina</h3><a href="docs/sem1/BitacoraTiempo Carolina 9.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="bitacora"><div class="badge">Bitácora</div><div class="icon">📘</div><h3>Bitácora Diego</h3><a href="docs/sem1/BitacoraTiempo Diego.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="bitacora"><div class="badge">Bitácora</div><div class="icon">📘</div><h3>Bitácora Felipe</h3><a href="docs/sem1/BitacoraTiempo feliperodriguez.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="bitacora"><div class="badge">Bitácora</div><div class="icon">📘</div><h3>Bitácora Sergio</h3><a href="docs/sem1/BitacoraTiempoSergio11.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="bitacora"><div class="badge">Bitácora</div><div class="icon">📘</div><h3>Bitácora General</h3><a href="docs/sem1/BitacoraTiempo.pdf" class="btn">Descargar</a></div>
 
-        <div class="card">
-            <h2>Bitácora - Diego</h2>
-            <a href="docs/sem1/BitacoraTiempo Diego.pdf" download class="btn">Descargar</a>
-        </div>
+<!-- ACTAS -->
+<div class="card" data-type="acta"><div class="badge">Acta</div><div class="icon">📄</div><h3>Acta reunión 20-04</h3><a href="docs/sem1/Acta de reunion 20-04-2026.doc.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="acta"><div class="badge">Acta</div><div class="icon">📄</div><h3>Acta reunión</h3><a href="docs/sem1/ActaReunion.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="acta"><div class="badge">Acta</div><div class="icon">📄</div><h3>Acta iniciación</h3><a href="docs/sem1/Actalniciacion_C2.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="acta"><div class="badge">Acta</div><div class="icon">📄</div><h3>DT inicio</h3><a href="docs/sem1/DT_Ini_01_Actalniciacion_.pdf" class="btn">Descargar</a></div>
 
-        <div class="card">
-            <h2>Bitácora - Felipe Rodríguez</h2>
-            <a href="docs/sem1/BitacoraTiempo feliperodriguez.pdf" download class="btn">Descargar</a>
-        </div>
+<!-- PLANES -->
+<div class="card" data-type="plan"><div class="badge">Plan</div><div class="icon">📊</div><h3>Plan riesgos</h3><a href="docs/sem1/PlanRiesgos.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="plan"><div class="badge">Plan</div><div class="icon">📊</div><h3>Plantilla plan riesgos</h3><a href="docs/sem1/plt_PlanRiesgos.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="plan"><div class="badge">Plan</div><div class="icon">📊</div><h3>Manejo de riesgos (Excel)</h3><a href="docs/sem1/Manejo de riesgos.xlsx" class="btn">Descargar</a></div>
+<div class="card" data-type="plan"><div class="badge">Plan</div><div class="icon">📊</div><h3>Plan configuración</h3><a href="docs/sem1/Plan_adminconfiguracion_v1.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="plan"><div class="badge">Plan</div><div class="icon">📊</div><h3>Plantilla configuración</h3><a href="docs/sem1/dt_ptl_plan_adminconfiguracion_v1.pdf" class="btn">Descargar</a></div>
 
-        <div class="card">
-            <h2>Bitácora - Sergio</h2>
-            <a href="docs/sem1/BitacoraTiempoSergio11.pdf" download class="btn">Descargar</a>
-        </div>
+<!-- OTROS -->
+<div class="card" data-type="otros"><div class="badge">Otro</div><div class="icon">📁</div><h3>Definición estrategia</h3><a href="docs/sem1/DefinicionEstrategia .pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="otros"><div class="badge">Otro</div><div class="icon">📁</div><h3>Log defectos</h3><a href="docs/sem1/logDefectos.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="otros"><div class="badge">Otro</div><div class="icon">📁</div><h3>Log defectos fase 9</h3><a href="docs/sem1/logDefectos Fase 9.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="otros"><div class="badge">Otro</div><div class="icon">📁</div><h3>Maestro documentos</h3><a href="docs/sem1/Maestro de documentos.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="otros"><div class="badge">Otro</div><div class="icon">📁</div><h3>Script procesos</h3><a href="docs/sem1/ScriptDefiniciónProcesos 1.pdf" class="btn">Descargar</a></div>
 
-        <div class="card">
-            <h2>Bitácora General</h2>
-            <a href="docs/sem1/BitacoraTiempo.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <!-- ACTAS -->
-        <div class="card">
-            <h2>Acta de Reunión (20-04-2026)</h2>
-            <a href="docs/sem1/Acta de reunion 20-04-2026.doc.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Acta de Reunión</h2>
-            <a href="docs/sem1/ActaReunion.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Acta de Iniciación</h2>
-            <a href="docs/sem1/ActaIniciacion_C2.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <!-- PLANES -->
-        <div class="card">
-            <h2>Plan de Riesgos</h2>
-            <a href="docs/sem1/PlanRiesgos.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Plantilla Plan de Riesgos</h2>
-            <a href="docs/sem1/plt_PlanRiesgos.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Plan Administración de Configuración</h2>
-            <a href="docs/sem1/Plan_adminconfiguracion_v1.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Plantilla Administración Configuración</h2>
-            <a href="docs/sem1/dt_ptl_plan_adminconfiguracion_v1.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <!-- OTROS -->
-        <div class="card">
-            <h2>Definición de Estrategia</h2>
-            <a href="docs/sem1/DefinicionEstrategia .pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Log de Defectos</h2>
-            <a href="docs/sem1/logDefectos.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Log de Defectos Fase 9</h2>
-            <a href="docs/sem1/logDefectos Fase 9.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Maestro de Documentos</h2>
-            <a href="docs/sem1/Maestro de documentos.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Script Definición de Procesos</h2>
-            <a href="docs/sem1/ScriptDefiniciónProcesos 1.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <!-- REVISIONES -->
-        <div class="card">
-            <h2>Revisión Acta de Iniciación</h2>
-            <a href="docs/sem1/revisión de documentos Acta de iniciacion.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Carolina</h2>
-            <a href="docs/sem1/revisión de documentos Btr Angie S.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Camilo</h2>
-            <a href="docs/sem1/revisión de documentos Btr Camilo B 9.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Diego</h2>
-            <a href="docs/sem1/revisión de documentos Btr Diego D.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Felipe</h2>
-            <a href="docs/sem1/revisión de documentos Btr Felipe R.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Jonathan</h2>
-            <a href="docs/sem1/revisión de documentos Btr Jonathan C.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Sergio</h2>
-            <a href="docs/sem1/revisión de documentos Btr Sergio M.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Estrategia</h2>
-            <a href="docs/sem1/revisión de documentos Definición de estrategia.pdf" download class="btn">Descargar</a>
-        </div>
-
-        <div class="card">
-            <h2>Revisión Semanal</h2>
-            <a href="docs/sem1/RevisiónDocumentosSemanal.pdf" download class="btn">Descargar</a>
-        </div>
-
-         <div class="card">
- <h2> revision de documentos manejo de riesgos</h2>
-<a href="docs/sem1/revisión de documentos manejo de riesgos.pdf" download class="btn">Descargar</a>
-         </div>
-
-         <div class="card">
-    <h2>Manejo de Riesgos </h2>
-    <a href="docs/sem1/Manejo de riesgos.xlsx" download class="btn">Descargar</a>
-         </div>
-    </div>
-
-        <div class="card">
-                <h2>Control de asignaciones</h2>               
-                <a href=https://upcedu-my.sharepoint.com/:x:/r/personal/jonathan-cobos_upc_edu_co/Documents/dt_ptl_controlAsignaciones.xlsx?d=wa31ebd2148224564af145ad5078d2d0d&csf=1&web=1&e=cUUKSz>Acceder</a>
-            </div>
+<!-- REVISIONES -->
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión acta inicio</h3><a href="docs/sem1/revisión de documentos Acta de iniciacion.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión Angie</h3><a href="docs/sem1/revisión de documentos Btr Angie S.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión Camilo</h3><a href="docs/sem1/revisión de documentos Btr Camilo B 9.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión Diego</h3><a href="docs/sem1/revisión de documentos Btr Diego D.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión Felipe</h3><a href="docs/sem1/revisión de documentos Btr Felipe R.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión Jonathan</h3><a href="docs/sem1/revisión de documentos Btr Jonathan C.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión Sergio</h3><a href="docs/sem1/revisión de documentos Btr Sergio M.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión estrategia</h3><a href="docs/sem1/revisión de documentos Definición de estrategia.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión riesgos</h3><a href="docs/sem1/revisión de documentos manejo de riesgos.pdf" class="btn">Descargar</a></div>
+<div class="card" data-type="revision"><div class="badge">Revisión</div><div class="icon">✅</div><h3>Revisión semanal</h3><a href="docs/sem1/RevisiónDocumentosSemanal.pdf" class="btn">Descargar</a></div>
 
 </div>
+</div>
+
+<script>
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const cards = document.querySelectorAll(".card");
+const count = document.getElementById("count");
+
+function update() {
+    let visible = 0;
+    const text = search.value.toLowerCase();
+    const type = filter.value;
+
+    cards.forEach(card => {
+        const title = card.innerText.toLowerCase();
+        const category = card.dataset.type;
+
+        const show = title.includes(text) && (type === "all" || category === type);
+
+        card.style.display = show ? "block" : "none";
+        if (show) visible++;
+    });
+
+    count.textContent = visible;
+}
+
+search.addEventListener("input", update);
+filter.addEventListener("change", update);
+update();
+</script>
 
 </body>
 </html>

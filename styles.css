@@ -149,10 +149,13 @@ h1::after {
 }
 
 .documents {
+    max-width: 1000px; /* 🔥 limita el ancho */
+    margin: auto;
+    padding: 20px;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) 0.2s backwards;
+    grid-template-columns: repeat(3, 1fr); /* 👈 SOLO 3 columnas */
+    gap: 20px;
 }
 
 .card {
