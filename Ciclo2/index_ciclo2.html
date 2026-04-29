@@ -3,25 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <title>Ciclo 2 - Ingeniería de Software</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top, #1e293b, #020617);
+            color: #e2e8f0;
+            margin: 0;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header p {
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .boton-volver {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 14px;
+            background: #334155;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #e2e8f0;
+            font-size: 14px;
+        }
+
+        .boton-volver:hover {
+            background: #475569;
+        }
+
+        /* CONTENEDOR */
+        .contenedor-semanas {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* TARJETAS */
+        .tarjeta-semana {
+            background: rgba(30,41,59,0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .tarjeta-semana:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .semana-numero {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .tarjeta-semana h2 {
+            margin: 8px 0;
+        }
+
+        .tarjeta-semana p {
+            font-size: 14px;
+            color: #cbd5f5;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 14px;
+            background: #3b82f6;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+        }
+
+        .boton:hover {
+            background: #2563eb;
+        }
+
+        /* BADGE */
+        .badge {
+            display: inline-block;
+            background: #2563eb;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Ciclo 2 - Repositorio del Curso</h1>
-        <p>Ingeniería de Software</p>
-        <a href="../index.html" class="boton">Volver al Inicio</a>
-    </header>
+<header>
+    <h1>📂 Ciclo 2</h1>
+    <p>Repositorio del curso — Ingeniería de Software</p>
+    <a href="../index.html" class="boton-volver">⬅ Volver al inicio</a>
+</header>
 
-    <main class="contenedor-semanas">
+<main class="contenedor-semanas">
 
-        <div class="tarjeta-semana">
-            <h2>Semana 1</h2>
-            <p>Documentos y actividades correspondientes a la semana 1.</p>
-            <a href="semana1.html" class="boton">Ver documentos</a>
-        </div>
+    <!-- SEMANA 1 -->
+    <div class="tarjeta-semana">
+        <span class="semana-numero">Semana 1</span>
+        <h2>📑 Documentación inicial</h2>
+        <p>Actas, bitácoras, planes y revisiones del inicio del proyecto.</p>
+        <span class="badge">30+ documentos</span>
+        <br>
+        <a href="semana1.html" class="boton">Ver documentos</a>
+    </div>
 
-    </main>
+    <!-- EJEMPLO FUTURO -->
+    <!--
+    <div class="tarjeta-semana">
+        <span class="semana-numero">Semana 2</span>
+        <h2>⚙️ Desarrollo inicial</h2>
+        <p>Arquitectura, backend y primeras funcionalidades.</p>
+        <span class="badge">En progreso</span>
+        <br>
+        <a href="semana2.html" class="boton">Ver documentos</a>
+    </div>
+    -->
+
+</main>
 
 </body>
 </html>
