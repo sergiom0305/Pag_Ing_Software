@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Semana 2 - Documentos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #1e293b, #020617);
+    color: #e2e8f0;
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 { font-size: 32px; }
+.header p { color: #94a3b8; }
+
+.back {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #334155;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+/* CONTROLES */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+    background: #1e293b;
+    color: white;
+}
+
+/* GRID */
+.documents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: rgba(30,41,59,0.6);
+    backdrop-filter: blur(10px);
+    padding: 18px;
+    border-radius: 18px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* BADGE */
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.bitacora { background:#2563eb; }
+.acta { background:#9333ea; }
+.plan { background:#059669; }
+.revision { background:#d97706; }
+.otros { background:#475569; }
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #3b82f6;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>📂 Semana 2</h1>
+    <p>Documentación del proyecto - Ciclo 2</p>
+    <a href="index.html" class="back">⬅ Volver</a>
+</div>
+
+<div class="container">
+
+<div class="controls">
+    <input type="text" id="search" placeholder="🔍 Buscar...">
+    <select id="filter">
+        <option value="all">Todos</option>
+        <option value="bitacora">Bitácoras</option>
+        <option value="acta">Actas</option>
+        <option value="plan">Plantillas</option>
+        <option value="revision">Revisiones</option>
+    </select>
+</div>
+
+<div class="documents" id="docs">
+
+    
+    <div class="card" data-type="bitacora">
+        <div class="badge bitacora">Bitácora</div>
+        <h3>Bitácora Semana 2 - Camilo</h3>
+        <a href="/Ciclo2/docs/sem2/bitacora_camilo.pdf" class="btn">Descargar</a>
+    </div>
+
+    <div class="card" data-type="acta">
+        <div class="badge acta">Acta</div>
+        <h3>Acta Reunión Semana 2</h3>
+        <a href="/Ciclo2/docs/sem2/acta_sem2.pdf" class="btn">Descargar</a>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const cards = document.querySelectorAll(".card");
+
+function update(){
+    const text = search.value.toLowerCase();
+    const type = filter.value;
+
+    cards.forEach(card=>{
+        const title = card.innerText.toLowerCase();
+        const category = card.dataset.type;
+
+        const show = title.includes(text) && (type==="all" || category===type);
+        card.style.display = show ? "block" : "none";
+    });
+}
+
+search.addEventListener("input", update);
+filter.addEventListener("change", update);
+</script>
+
+</body>
+</html>
