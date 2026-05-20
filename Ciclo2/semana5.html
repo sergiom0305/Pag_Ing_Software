@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Semana 5 - Documentos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        radial-gradient(circle at top,#1e293b 0%,#020617 100%);
+    color:#e2e8f0;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    padding:50px 20px 30px;
+}
+
+.header h1{
+    font-size:40px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.header p{
+    color:#94a3b8;
+    font-size:16px;
+}
+
+.back{
+    display:inline-block;
+    margin-top:18px;
+    padding:11px 18px;
+    background:rgba(51,65,85,.8);
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:14px;
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+.back:hover{
+    background:#475569;
+    transform:translateY(-2px);
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:25px;
+}
+
+/* SEARCH */
+
+.controls{
+    display:flex;
+    gap:15px;
+    margin-bottom:28px;
+}
+
+input,select{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:16px;
+    background:rgba(30,41,59,.7);
+    backdrop-filter:blur(12px);
+    color:white;
+    font-size:14px;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+/* GRID */
+
+.documents{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+    gap:24px;
+}
+
+/* CARD */
+
+.card{
+    background:rgba(30,41,59,.65);
+    backdrop-filter:blur(14px);
+    border-radius:24px;
+    padding:22px;
+    position:relative;
+    overflow:hidden;
+    transition:.35s ease;
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.45),
+        0 0 0 1px rgba(255,255,255,.03);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(to right,#3b82f6,#8b5cf6);
+}
+
+.card h3{
+    margin-top:16px;
+    line-height:1.5;
+    font-size:16px;
+    font-weight:600;
+}
+
+/* BADGES */
+
+.badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.4px;
+}
+
+.bitacora{background:#2563eb;}
+.acta{background:#9333ea;}
+.manual{background:#0f766e;}
+.prueba{background:#059669;}
+.revision{background:#d97706;}
+.log{background:#dc2626;}
+.word{background:#2563eb;}
+.excel{background:#16a34a;}
+.otros{background:#475569;}
+
+/* ICON */
+
+.icon{
+    font-size:30px;
+}
+
+/* BOTON */
+
+.btn{
+    display:inline-block;
+    margin-top:16px;
+    padding:10px 16px;
+    background:#3b82f6;
+    border-radius:14px;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#2563eb;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:40px 20px;
+    color:#64748b;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>📂 Semana 5</h1>
+    <p>Repositorio documental del proyecto - Ciclo 2</p>
+
+    <a href="index.html" class="back">
+        ⬅ Volver al ciclo
+    </a>
+</div>
+
+<div class="container">
+
+    <div class="controls">
+
+        <input type="text" id="search"
+        placeholder="🔍 Buscar documento...">
+
+        <select id="filter">
+            <option value="all">Todos</option>
+            <option value="bitacora">Bitácoras</option>
+            <option value="acta">Actas</option>
+            <option value="manual">Manuales</option>
+            <option value="prueba">Pruebas</option>
+            <option value="revision">Revisiones</option>
+            <option value="excel">Excel</option>
+            <option value="word">Word</option>
+            <option value="otros">Otros</option>
+        </select>
+
+    </div>
+
+<div class="documents">
+
+<!-- ACTA -->
+
+<div class="card" data-type="acta">
+<div class="badge acta">ACTA</div>
+<div class="icon">📄</div>
+<h3>Acta de reunión 19-05-2026</h3>
+<a href="/Ciclo2/docs/sem5/Actadereunion19-05-2026.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- BITÁCORAS -->
+
+<div class="card" data-type="bitacora">
+<div class="badge bitacora">BITÁCORA</div>
+<div class="icon">📘</div>
+<h3>Bitácora Camilo</h3>
+<a href="/Ciclo2/docs/sem5/BitacoraTiempo5C2.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="bitacora">
+<div class="badge bitacora">BITÁCORA</div>
+<div class="icon">📘</div>
+<h3>Bitácora Cobos</h3>
+<a href="/Ciclo2/docs/sem5/BitacoraTiempoCobos5.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="bitacora">
+<div class="badge bitacora">BITÁCORA</div>
+<div class="icon">📘</div>
+<h3>Bitácora Diego</h3>
+<a href="/Ciclo2/docs/sem5/BitacoraTiempoDiego5.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="bitacora">
+<div class="badge bitacora">BITÁCORA</div>
+<div class="icon">📘</div>
+<h3>Bitácora Sergio</h3>
+<a href="/Ciclo2/docs/sem5/BitacoraSergio52.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="bitacora">
+<div class="badge bitacora">BITÁCORA</div>
+<div class="icon">📘</div>
+<h3>Bitácora Felipe</h3>
+<a href="/Ciclo2/docs/sem5/BitacoraTiempoFelipe5.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- MANUALES -->
+
+<div class="card" data-type="manual">
+<div class="badge manual">MANUAL</div>
+<div class="icon">📗</div>
+<h3>DieselMaps Manual Técnico</h3>
+<a href="/Ciclo2/docs/sem5/DieselMaps_Manual_Tecnico.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="manual">
+<div class="badge manual">MANUAL</div>
+<div class="icon">📙</div>
+<h3>DieselMaps Manual Usuario</h3>
+<a href="/Ciclo2/docs/sem5/DieselMaps_Manual_Usuario.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- PRUEBAS -->
+
+<div class="card" data-type="prueba">
+<div class="badge prueba">PRUEBAS</div>
+<div class="icon">🧪</div>
+<h3>Informe Pruebas DieselMaps V5</h3>
+<a href="/Ciclo2/docs/sem5/Informe_Pruebas_DieselMaps_v5.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="prueba">
+<div class="badge prueba">PRUEBAS</div>
+<div class="icon">🧪</div>
+<h3>Plan Pruebas DieselMaps V4</h3>
+<a href="/Ciclo2/docs/sem5/Plan_Pruebas_DieselMaps_v4.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- LOG -->
+
+<div class="card" data-type="otros">
+<div class="badge log">LOG</div>
+<div class="icon">📁</div>
+<h3>Log defectos fase 14</h3>
+<a href="/Ciclo2/docs/sem5/logDefectos_Fase_14.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- MAESTRO -->
+
+<div class="card" data-type="otros">
+<div class="badge otros">OTROS</div>
+<div class="icon">🗂️</div>
+<h3>Maestro de documentos</h3>
+<a href="/Ciclo2/docs/sem5/Maestro_de_documentos.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- REVISIONES -->
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión documentos Camilo</h3>
+<a href="/Ciclo2/docs/sem5/revisión_de_documentos_Btr_Camilo_B.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión documentos Diego</h3>
+<a href="/Ciclo2/docs/sem5/revisión_de_documentos_Btr_Diego_D.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión documentos Felipe</h3>
+<a href="/Ciclo2/docs/sem5/revisión_de_documentos_Btr_Felipe_R.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión documentos Jonathan</h3>
+<a href="/Ciclo2/docs/sem5/revisión_de_documentos_Btr_Jonathan_C.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión documentos Sergio</h3>
+<a href="/Ciclo2/docs/sem5/revisión_de_documentos_Btr_Sergio_M.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión documentos Angie</h3>
+<a href="/Ciclo2/docs/sem5/revisión_de_documentos_Btr_Angie_S.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión Informe de Pruebas</h3>
+<a href="/Ciclo2/docs/sem5/Revisión_de_documentos_Btr_Informe_Pruebas.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión Plan de Pruebas</h3>
+<a href="/Ciclo2/docs/sem5/Revisión_de_documentos_Btr_Plan_Pruebas.pdf" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="revision">
+<div class="badge revision">REVISIÓN</div>
+<div class="icon">✅</div>
+<h3>Revisión Script Definición Procesos</h3>
+<a href="/Ciclo2/docs/sem5/Revisión_de_documentos_Btr_ScriptDefiniciónProcesos_5.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- SCRIPT -->
+
+<div class="card" data-type="word">
+<div class="badge word">WORD</div>
+<div class="icon">📝</div>
+<h3>Script Definición Procesos 5 DOCX</h3>
+<a href="/Ciclo2/docs/sem5/ScriptDefiniciónProcesos5.docx" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="otros">
+<div class="badge otros">PDF</div>
+<div class="icon">📄</div>
+<h3>Script Definición Procesos 5 PDF</h3>
+<a href="/Ciclo2/docs/sem5/ScriptDefiniciónProcesos5.pdf" class="btn">Descargar</a>
+</div>
+
+<!-- EXCEL -->
+
+<div class="card" data-type="excel">
+<div class="badge excel">EXCEL</div>
+<div class="icon">📊</div>
+<h3>Seguimiento de Riesgos DM</h3>
+<a href="/Ciclo2/docs/sem5/Seguimiento de Riesgos-DM.xlsx" class="btn">Descargar</a>
+</div>
+
+<div class="card" data-type="otros">
+    <div class="badge otros">Link</div>
+    <div class="icon">🔗</div>
+    <h3>Control de Asignaciones</h3>
+    <a href="https://upcedu-my.sharepoint.com/:x:/r/personal/jonathan-cobos_upc_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7BA31EBD21-4822-4564-AF14-5AD5078D2D0D%7D&file=dt_ptl_controlAsignaciones.xlsx&action=default&mobileredirect=true" target="_blank" class="btn">Abrir enlace</a>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+    Ingeniería de Software • Ciclo 2 • Semana 5
+</div>
+
+<script>
+
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const cards = document.querySelectorAll(".card");
+
+function update(){
+
+    const text = search.value.toLowerCase();
+    const type = filter.value;
+
+    cards.forEach(card=>{
+
+        const title = card.innerText.toLowerCase();
+        const category = card.dataset.type;
+
+        const show =
+            title.includes(text) &&
+            (type === "all" || category === type);
+
+        card.style.display = show ? "block" : "none";
+    });
+}
+
+search.addEventListener("input", update);
+filter.addEventListener("change", update);
+
+</script>
+
+</body>
+</html>
